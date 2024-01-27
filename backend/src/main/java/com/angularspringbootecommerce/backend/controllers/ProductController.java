@@ -29,19 +29,19 @@ public class ProductController {
     @PostMapping("add")
     public Product add(@RequestBody ProductDto productDto) {
         if (
-                productDto.getName() == null ||
-                productDto.getName().isEmpty() ||
-                productDto.getDescription() == null || productDto.getDescription().isEmpty() ||
-                productDto.getImgUrl() == null || productDto.getImgUrl().isEmpty() ||
+                productDto.getTitle() == null ||
+                productDto.getTitle().isEmpty() ||
+               // productDto.getDescription() == null || productDto.getDescription().isEmpty() ||
+                productDto.getImage() == null || productDto.getImage().isEmpty() ||
                 productDto.getPrice().compareTo(BigDecimal.ZERO) <= 0) {
 
             throw new AppException("All fields are required.", HttpStatus.BAD_REQUEST);
         }
         Product newProduct = new Product();
-        newProduct.setName(productDto.getName());
-        newProduct.setDescription(productDto.getDescription());
+        newProduct.setTitle(productDto.getTitle());
+        //newProduct.setDescription(productDto.getDescription());
         newProduct.setPrice(productDto.getPrice());
-        newProduct.setImgUrl(productDto.getImgUrl());
+        newProduct.setImage(productDto.getImage());
 
         return productService.add(newProduct);
     }
@@ -57,4 +57,13 @@ public class ProductController {
             throw new AppException("Product not found", HttpStatus.NOT_FOUND);
         }
     }
+
+    //I added
+    @PostMapping("/fetch-and-insert")
+    public ResponseEntity<String> fetchAndInsertData(@RequestBody List<Product> products) {
+        System.out.println("products: " + products.toString());
+        productService.fetchAndInsertDataFromApi(products);
+        return ResponseEntity.ok("Data fetched and inserted successfully.");
+    }
+    
 }

@@ -1,0 +1,2 @@
+INSERT INTO [angularspringbootecommerce].[dbo].[products]
+    VALUES ('2', 'Cashmere Blanket','https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/81Zz5k9QRoL._AC_UF894,1000_QL80_.jpg','Cashmere Blanket','30.00');

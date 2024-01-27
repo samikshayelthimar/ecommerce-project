@@ -1,0 +1,5 @@
+SELECT TOP (1000) [id]
+      ,[price]
+      ,[image]
+      ,[title]
+  FROM [angularspringbootecommerce].[dbo].[products]

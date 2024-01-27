@@ -11,10 +11,10 @@ import java.math.BigDecimal;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
-    private String description;
+    private String title;
+    //private String description;
     private BigDecimal price;
-    private String imgUrl;
+    private String image;
 }

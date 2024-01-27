@@ -8,12 +8,14 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  //these fields are gathered from the HTML form of the component
   email = '';
   password = '';
   confirmPassword = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  //called when submit button is clicked
   register() {
     if (this.password != this.confirmPassword) {
       alert("Passwords does not match");

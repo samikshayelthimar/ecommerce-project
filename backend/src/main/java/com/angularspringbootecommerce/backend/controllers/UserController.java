@@ -18,11 +18,13 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public User getUserById(@PathVariable Long userId, Authentication authentication) {
+        System.out.println("Samiksha here" + userId);
         return userService.getUserById(userId, authentication);
     }
 
     @PutMapping("/update/{userId}")
     public User updateUserById(@PathVariable Long userId, @RequestBody UserDto userDto, Authentication authentication) {
+        System.out.println("Samiksha here" + userId);
         return userService.updateUserById(userId, userDto, authentication);
     }
 }

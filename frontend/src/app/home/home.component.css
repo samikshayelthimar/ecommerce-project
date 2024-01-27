@@ -1,5 +1,23 @@
-#productImg {
+/* #productImg {
     max-height: 200px;
     width: auto;
     object-fit: contain;
-}
+} */
+
+/* Adjust the fixed size as per your requirements */
+.card {
+    width: 200px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    box-sizing: border-box;
+  }
+  
+  #productImg {
+    max-width: 100%; /* Make sure the image doesn't exceed the container */
+    max-height: 100%; /* Make sure the image doesn't exceed the container */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    box-sizing: border-box;
+  }
+  

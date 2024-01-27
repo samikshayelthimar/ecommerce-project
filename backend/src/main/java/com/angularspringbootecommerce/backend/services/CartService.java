@@ -64,7 +64,7 @@ public class CartService {
                         .orElseThrow(() -> new AppException("Product not found", HttpStatus.NOT_FOUND));
 
                 ProductDto productDto = new ProductDto();
-                productDto.setImgUrl(product.getImgUrl());
+                productDto.setImage(product.getImage());
                 consolidatedCartItem.setProduct(productDto);
             }
 
@@ -125,7 +125,7 @@ public class CartService {
 
         CartItem newItem = new CartItem();
         newItem.setProductId(product.getId());
-        newItem.setProductName(product.getName());
+        newItem.setProductName(product.getTitle());
         newItem.setQuantity(quantity);
         newItem.setPrice(itemPrice);
         newItem.setCart(userCart);

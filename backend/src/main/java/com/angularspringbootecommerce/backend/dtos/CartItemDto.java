@@ -12,4 +12,5 @@ public class CartItemDto {
     private BigDecimal price;
     private BigDecimal subTotal;
     private ProductDto product;
+    private String image;
 }

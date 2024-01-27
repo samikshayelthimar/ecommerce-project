@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 
 export interface Product {
   id: number;
-  name: string;
+  title: string;
   description: string;
   price: number;
-  imgUrl: string;
+  image: string;
 }
 
 @Injectable({
@@ -16,6 +16,7 @@ export interface Product {
 export class ProductService {
   private apiUrl = 'http://localhost:8080/api/v1/products';
 
+  //I added
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Product[]> {
@@ -35,4 +36,14 @@ export class ProductService {
 
     return this.http.post<number>(`http://localhost:8080/api/v1/cart/${userId}/${productId}/${quantity}`, {}, { headers });
   }
+
+  //I added
+  fetchAndInsertData(products: Product[]): Observable<string> {
+    return this.http.post<string>(`${this.apiUrl}/fetch-and-insert`, products);
+  }
+
+  fetchAndInsertDataFromApi(): Observable<Product[]> {
+    return this.http.get<Product[]>('https://fakestoreapi.com/products');
+  }
+  
 }

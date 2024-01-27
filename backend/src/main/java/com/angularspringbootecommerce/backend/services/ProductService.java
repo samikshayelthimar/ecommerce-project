@@ -14,6 +14,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
@@ -25,4 +26,10 @@ public class ProductService {
     public Product add(Product product) {
         return productRepository.save(product);
     }
+    //I added
+    public void fetchAndInsertDataFromApi(List<Product> products) {
+        // Insert products into the database
+        productRepository.saveAll(products);
+    }
+    
 }

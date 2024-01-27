@@ -4,11 +4,11 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <img [src]="product?.imgUrl" alt="{{ product?.name }}" id="productImg">
+            <img [src]="product?.image" alt="{{ product?.title }}" id="productImg">
         </div>
         <div class="col-md-6">
             <div *ngIf="product">
-                <h2>{{ product.name }}</h2>
+                <h2>{{ product.title }}</h2>
                 <p>{{ product.description }}</p>
                 <p>Price: ${{ product.price }}</p>
                 <div>

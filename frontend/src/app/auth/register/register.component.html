@@ -2,17 +2,21 @@
   <h1 class="display-5">Register</h1>
   <div class="row justify-content-center">
     <div class="col-md-4">
+      <!-- this binds the submit button to the register() function in the component -->
         <form (ngSubmit)="register()">
             <div class="mb-3">
               <label for="email">Email address</label>
+              <!-- this binds the input field to the email property in the component -->
               <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email">
             </div>
             <div class="mb-3">
               <label for="password">Password</label>
+              <!-- this binds the input field to the email property in the component -->
               <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password">
             </div>
             <div class="mb-3">
               <label for="confirmPassword">Confirm password</label>
+              <!-- this binds the input field to the email property in the component -->
               <input type="password" class="form-control" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword">
             </div>
             <button type="submit" class="btn btn-primary">Register</button>

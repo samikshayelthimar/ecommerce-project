@@ -1,0 +1,21 @@
+
+@font-face {
+    font-family: 'PrimeIcons';
+    src: url('/pages/fonts/primeicons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+  }
+
+  /* p {
+    color: purple;
+  }
+
+  h1{
+    
+    font-family: 'PrimeIcons';
+  } */
+
+  body{
+    font-family: 'PrimeIcons';
+  }

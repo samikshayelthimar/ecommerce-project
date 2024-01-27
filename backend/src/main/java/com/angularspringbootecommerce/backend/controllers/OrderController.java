@@ -1,5 +1,16 @@
 package com.angularspringbootecommerce.backend.controllers;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.angularspringbootecommerce.backend.dtos.CartDto;
 import com.angularspringbootecommerce.backend.dtos.OrderDto;
 import com.angularspringbootecommerce.backend.dtos.PaymentDto;
@@ -9,14 +20,10 @@ import com.angularspringbootecommerce.backend.services.OrderService;
 import com.angularspringbootecommerce.backend.services.PaymentService;
 import com.stripe.exception.StripeException;
 import com.stripe.model.PaymentIntent;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
 
-import java.math.BigDecimal;
-import java.util.List;
-
+//this rest controller handles all HTTP requests to the /api/v1/orders endpoint and sends back responses
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/orders")
@@ -26,6 +33,7 @@ public class OrderController {
     private final PaymentService paymentService;
 
     @GetMapping("/{userId}")
+    //The Authentication object is used to get information about the authenticated user.
     public List<OrderDto> getOrdersByUserId(@PathVariable Long userId, Authentication authentication) {
         return orderService.getOrdersByUserId(userId, authentication);
     }

@@ -3,11 +3,11 @@
     <h1 class="display-5">Products</h1>
   </div>
   <div class="row">
-    <div class="col-md-3 mb-4" *ngFor="let product of products">
+    <div class="col-md-3 mb-4 box" *ngFor="let product of products">
       <div class="card p-2" [routerLink]="['/product', product.id]" style="cursor: pointer;">
-        <img [src]="product.imgUrl" id="productImg" alt="{{ product.name }}">
+        <img [src]="product.image" id="productImg" alt="{{ product.title }}">
         <div class="card-body p-2">
-          <h6 class="card-title">{{ product.name }}</h6>
+          <h6 class="card-title">{{ product.title }}</h6>
           <p class="card-text">${{ product.price }}</p>
         </div>
       </div>
